@@ -31,7 +31,7 @@ public class BaseCorsFilter implements Filter {
 	public void doFilter(ServletRequest rep, ServletResponse res, FilterChain fc)
 			throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		System.out.println("执行过滤操作");
+		//System.out.println("执行过滤操作");
 		HttpServletResponse response = (HttpServletResponse) res;
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
