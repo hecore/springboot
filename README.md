@@ -9,5 +9,5 @@ this project's web port is '8888',you need to access 127.0.0.1:8888;
 (3).restApis display by swagger.
 # 3.who am i
 Heaven pays off, and cuts the root. 
-if you have some advice,please send email to 'hecore@163.com' or contact with me with wechat named 'hecorewecha'.
+if you have some advice,please send email to 'hecore@163.com' or contact me by wechat named 'hecorewecha'.
 # 4.This project will be further improved.
