@@ -1,0 +1,291 @@
+swagger: '2.0'
+info:
+  description: my email hecore@163.com,this project url:https://github.com/hecore/springboot
+  version: '1.0'
+  title: hecore build Restful APIs with springboot&swagger
+  termsOfService: https://github.com/hecore/springboot
+  contact: {name: hecore}
+host: 127.0.0.1:8888
+basePath: /
+tags:
+- {name: swagger-controller, description: Swagger Controller}
+- {name: th-controller, description: Th Controller}
+- {name: rest-yaml-controller, description: Rest Yaml Controller}
+- {name: null-controller, description: Null Controller}
+paths:
+  /hello:
+    get:
+      tags: [null-controller]
+      summary: home
+      operationId: homeUsingGET
+      consumes: [application/json]
+      produces: ['*/*']
+      responses:
+        200:
+          description: OK
+          schema: {type: string}
+        401: {description: Unauthorized}
+        403: {description: Forbidden}
+        404: {description: Not Found}
+    head:
+      tags: [null-controller]
+      summary: home
+      operationId: homeUsingHEAD
+      consumes: [application/json]
+      produces: ['*/*']
+      responses:
+        200:
+          description: OK
+          schema: {type: string}
+        401: {description: Unauthorized}
+        204: {description: No Content}
+        403: {description: Forbidden}
+    post:
+      tags: [null-controller]
+      summary: home
+      operationId: homeUsingPOST
+      consumes: [application/json]
+      produces: ['*/*']
+      responses:
+        200:
+          description: OK
+          schema: {type: string}
+        201: {description: Created}
+        401: {description: Unauthorized}
+        403: {description: Forbidden}
+        404: {description: Not Found}
+    put:
+      tags: [null-controller]
+      summary: home
+      operationId: homeUsingPUT
+      consumes: [application/json]
+      produces: ['*/*']
+      responses:
+        200:
+          description: OK
+          schema: {type: string}
+        201: {description: Created}
+        401: {description: Unauthorized}
+        403: {description: Forbidden}
+        404: {description: Not Found}
+    delete:
+      tags: [null-controller]
+      summary: home
+      operationId: homeUsingDELETE
+      consumes: [application/json]
+      produces: ['*/*']
+      responses:
+        200:
+          description: OK
+          schema: {type: string}
+        401: {description: Unauthorized}
+        204: {description: No Content}
+        403: {description: Forbidden}
+    options:
+      tags: [null-controller]
+      summary: home
+      operationId: homeUsingOPTIONS
+      consumes: [application/json]
+      produces: ['*/*']
+      responses:
+        200:
+          description: OK
+          schema: {type: string}
+        401: {description: Unauthorized}
+        204: {description: No Content}
+        403: {description: Forbidden}
+    patch:
+      tags: [null-controller]
+      summary: home
+      operationId: homeUsingPATCH
+      consumes: [application/json]
+      produces: ['*/*']
+      responses:
+        200:
+          description: OK
+          schema: {type: string}
+        401: {description: Unauthorized}
+        204: {description: No Content}
+        403: {description: Forbidden}
+  /jsonDownload:
+    get:
+      tags: [rest-yaml-controller]
+      summary: jsonDownload
+      operationId: jsonDownloadUsingGET
+      consumes: [application/json]
+      produces: ['*/*']
+      responses:
+        200: {description: OK}
+        401: {description: Unauthorized}
+        403: {description: Forbidden}
+        404: {description: Not Found}
+  /rest/list:
+    get:
+      tags: [swagger-controller]
+      summary: Api操作:获取信息
+      operationId: getThsUsingGET
+      consumes: [application/json]
+      produces: ['*/*']
+      parameters:
+      - {name: id, in: header, description: id数值, required: true, type: integer, default: 1111,
+        format: int32}
+      - {name: name, in: query, description: 名称, required: true, type: string, default: hecore}
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items: {$ref: '#/definitions/Th'}
+        400: {description: 请求参数没填好}
+        401: {description: Unauthorized}
+        403: {description: Forbidden}
+        404: {description: 请求路径没有或页面跳转路径不对}
+  /th/inshow:
+    get:
+      tags: [th-controller]
+      summary: thin
+      operationId: thinUsingGET
+      consumes: [application/json]
+      produces: ['*/*']
+      parameters:
+      - {name: name, in: query, description: name, required: false, type: string,
+        default: World}
+      responses:
+        200:
+          description: OK
+          schema: {$ref: '#/definitions/Th'}
+        401: {description: Unauthorized}
+        403: {description: Forbidden}
+        404: {description: Not Found}
+    head:
+      tags: [th-controller]
+      summary: thin
+      operationId: thinUsingHEAD
+      consumes: [application/json]
+      produces: ['*/*']
+      parameters:
+      - {name: name, in: query, description: name, required: false, type: string,
+        default: World}
+      responses:
+        200:
+          description: OK
+          schema: {$ref: '#/definitions/Th'}
+        401: {description: Unauthorized}
+        204: {description: No Content}
+        403: {description: Forbidden}
+    post:
+      tags: [th-controller]
+      summary: thin
+      operationId: thinUsingPOST
+      consumes: [application/json]
+      produces: ['*/*']
+      parameters:
+      - {name: name, in: query, description: name, required: false, type: string,
+        default: World}
+      responses:
+        200:
+          description: OK
+          schema: {$ref: '#/definitions/Th'}
+        201: {description: Created}
+        401: {description: Unauthorized}
+        403: {description: Forbidden}
+        404: {description: Not Found}
+    put:
+      tags: [th-controller]
+      summary: thin
+      operationId: thinUsingPUT
+      consumes: [application/json]
+      produces: ['*/*']
+      parameters:
+      - {name: name, in: query, description: name, required: false, type: string,
+        default: World}
+      responses:
+        200:
+          description: OK
+          schema: {$ref: '#/definitions/Th'}
+        201: {description: Created}
+        401: {description: Unauthorized}
+        403: {description: Forbidden}
+        404: {description: Not Found}
+    delete:
+      tags: [th-controller]
+      summary: thin
+      operationId: thinUsingDELETE
+      consumes: [application/json]
+      produces: ['*/*']
+      parameters:
+      - {name: name, in: query, description: name, required: false, type: string,
+        default: World}
+      responses:
+        200:
+          description: OK
+          schema: {$ref: '#/definitions/Th'}
+        401: {description: Unauthorized}
+        204: {description: No Content}
+        403: {description: Forbidden}
+    options:
+      tags: [th-controller]
+      summary: thin
+      operationId: thinUsingOPTIONS
+      consumes: [application/json]
+      produces: ['*/*']
+      parameters:
+      - {name: name, in: query, description: name, required: false, type: string,
+        default: World}
+      responses:
+        200:
+          description: OK
+          schema: {$ref: '#/definitions/Th'}
+        401: {description: Unauthorized}
+        204: {description: No Content}
+        403: {description: Forbidden}
+    patch:
+      tags: [th-controller]
+      summary: thin
+      operationId: thinUsingPATCH
+      consumes: [application/json]
+      produces: ['*/*']
+      parameters:
+      - {name: name, in: query, description: name, required: false, type: string,
+        default: World}
+      responses:
+        200:
+          description: OK
+          schema: {$ref: '#/definitions/Th'}
+        401: {description: Unauthorized}
+        204: {description: No Content}
+        403: {description: Forbidden}
+  /th/list:
+    get:
+      tags: [th-controller]
+      summary: getThs
+      operationId: getThsUsingGET_1
+      consumes: [application/json]
+      produces: ['*/*']
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items: {$ref: '#/definitions/Th'}
+        401: {description: Unauthorized}
+        403: {description: Forbidden}
+        404: {description: Not Found}
+  /yamlDownload:
+    get:
+      tags: [rest-yaml-controller]
+      summary: yamlDownload
+      operationId: yamlDownloadUsingGET
+      consumes: [application/json]
+      produces: ['*/*']
+      responses:
+        200: {description: OK}
+        401: {description: Unauthorized}
+        403: {description: Forbidden}
+        404: {description: Not Found}
+definitions:
+  Th:
+    type: object
+    properties:
+      id: {type: integer, format: int64}
+      name: {type: string}
